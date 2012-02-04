@@ -8,8 +8,9 @@
 		$reply = 0;
 	$post = strip_tags($_POST['post-id']);
 	$date = time();
+	$ip = $_SERVER["REMOTE_ADDR"];
 	
-	$query = "INSERT INTO comments (name,comment,post_id,reply_to,date) values('".mysql_real_escape_string($name)."','".mysql_real_escape_string($com)."','".mysql_real_escape_string($post)."','".mysql_real_escape_string($reply)."','$date')";
+	$query = "INSERT INTO comments (name,comment,post_id,reply_to,date,ip) values('".mysql_real_escape_string($name)."','".mysql_real_escape_string($com)."','".mysql_real_escape_string($post)."','".mysql_real_escape_string($reply)."','$date','$ip')";
 	$sql = mysql_query($query) or die ( "Query failed due to: ".mysql_error()); 
 	
 	mysql_close($connection);
