@@ -12,8 +12,5 @@
 	$query = "INSERT INTO comments (name,comment,post_id,reply_to,date) values('".mysql_real_escape_string($name)."','".mysql_real_escape_string($com)."','".mysql_real_escape_string($post)."','".mysql_real_escape_string($reply)."','$date')";
 	$sql = mysql_query($query) or die ( "Query failed due to: ".mysql_error()); 
 	
-	if(!$sql)
-		echo "fuck";
-	
 	mysql_close($connection);
 ?>
